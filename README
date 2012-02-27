@@ -7,14 +7,8 @@ This project is mostly for demonstration purposes on how you might use Twilio
   with an existing authentication system to create a Two Factor Authentication
   system. Fundamentally it's pretty simple in concept and operation.
 
-When you create a user, the user gets an welcome notification via SMS to confirm
-  their phone number.
-
-When you attempt to log in, a correct username/password combination results in
-  a normal log in. An incorrect combination results in a "denied" message.
-
-If you want to reset your password, you can request the new password to be
-  delivered either via Voice or SMS. In a regular usage situation, this would
-  be the most logical and safest as the phone number is never exposed to the
-  web site user.
+No matter what username you put into the initial box, the system will generate
+  a one-time use password similar to an RSA token. Once this password is used,
+  the user's session is set and the password is destroyed. In this particular
+  case, we're not storing anything long term.
 
