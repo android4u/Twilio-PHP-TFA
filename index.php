@@ -49,12 +49,10 @@ session_start();
             <?php if (isset($_SESSION['password'])) { ?>
                 <p>Password: <input type="password" name="password" id="password" /></p>
             <?php } else { ?>
-                <p>
-                    <p>Phone Number: <input type="text" name="phone_number" id="phone_number" /></p>
-                    Preferred method:<br />
-                    SMS: <input type="radio" name="method" value="sms" checked="checked" />
-                    Voice: <input type="radio" name="method" value="voice" />
-                </p>
+                <p>Phone Number: <input type="text" name="phone_number" id="phone_number" /></p>
+                Preferred method:<br />
+                SMS: <input type="radio" name="method" value="sms" checked="checked" />
+                Voice: <input type="radio" name="method" value="voice" />
             <?php } ?>
 
             <p><input type="submit" name="submit" id="submit" value="login!" /></p>

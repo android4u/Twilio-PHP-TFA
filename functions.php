@@ -21,7 +21,7 @@ function user_generate_token($username, $phoneNum, $method){
 
     // Create a new password
     $password = substr(md5(time().rand(0, 10^10)), 0, 10);
-//TODO: store in session
+    // Store the username and password.
     $_SESSION['username'] = $username;
     $_SESSION['password'] = $password;
 
@@ -46,15 +46,17 @@ function user_generate_token($username, $phoneNum, $method){
 
 function user_login($username, $submitted) {
 
+    // Retrieve the stored password
     $stored = $_SESSION['password'];
-
+    // Compare the retrieved vs the stored password
     if ($stored == $submitted) {
         $message = "Hello and welcome back $username";
     } else {
         $message = "Sorry, that's an invalid username and password combination.";
     }
-
+    // Clean up after ourselves
     unset($_SESSION['username']);
     unset($_SESSION['password']);
+
     return $message;
 }
