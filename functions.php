@@ -28,7 +28,7 @@ function user_generate_token($username, $phoneNum, $method){
     $client = new Services_Twilio($accountsid, $authtoken);
     // Prepare the message with the password embedded
     $content = ('sms' == $method) ? "Your newly generated password is ".$password :
-        "http://twimlets.com/message?Message%5B0%5D=Your%20newly%20generated%20password%20is%20%2C%2C" .
+        "https://twimlets.com/message?Message%5B0%5D=Your%20newly%20generated%20password%20is%20%2C%2C" .
         urlencode(preg_replace("/(.)/i", "\${1},,", $password)) .
         "%20To%20repeat%20that%2C%20your%20password%20is%20%2C%2C" . urlencode(preg_replace("/(.)/i", "\${1},,", $password));
     $method  = ('sms' == $method) ? 'sms_messages' : 'calls';
